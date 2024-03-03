@@ -21,9 +21,12 @@
 </head>
 
 <body>
- <div>
-  <p>
-    <% @user = User.find_by({ "id" => session["user_id"] }) %>
+ <nav class="navbar bg-primary mb-3" data-bs-theme="dark">
+  <div class="container">
+   <a class="navbar-brand" href="/">My App</a>
+   <span class="navbar-text">
+
+       <% @user = User.find_by({ "id" => session["user_id"] }) %>
     <% if @user == nil %>
       <a href="/users/new">Sign Up</a>
       |
@@ -33,6 +36,13 @@
       |
       <a href="/logout">Logout</a>
     <% end %>
+
+   </span>
+  </div>
+ </nav>
+
+ <div class="container">
+  <p> 
   </p>
 
   <div class="unicorn">
